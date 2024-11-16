@@ -42,7 +42,7 @@ This project is a solution for dynamically resizing images on request. It featur
 
 1. Clone the repository:
   ```sh
-  git clone https://github.com/yourusername/tf-aws-react-challenge.git
+  git clone https://github.com/rocantero/tf-img-resize.git
   cd tf-aws-react-challenge
   ```
 

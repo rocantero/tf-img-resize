@@ -57,6 +57,49 @@ This project is a solution for dynamically resizing images on request. It featur
   cd backend
   npm install
   ```
+4. Init terraform
+  ```sh
+  cd terraform
+  terraform init
+  terraform validate
+  terraform plan
+  ```
+5. Run Terraform
+  ```sh
+  terraform init
+  ```
+6. Destroy terraform
+  ```sh
+  terraform destroy
+  ```
+
+### Challenge Completion
+
+#### React frontend
+1. App layout, basic components ✅
+2. Redux stores, endpoints ✅
+3. Styling ❌
+4. Unit Tests ❌
+5. API Integration via env variables ✅
+6. Does it work? Nope, API fails and upload action isn't properly tested
+
+#### AWS Lambda Backend
+1. Endpoints for getImages, getResizedImage, postImage ✅
+2. Common ImageService for all fetching, saving and resizing ✅
+3. Handlers mapped to API Gateway endpoints ✅
+3. Unit tests ❌
+4. Does it work? Nope, functions fail when called, errors are visible on CloudWatch ❌
+
+#### Terraform
+1. Valid terraform set ✅
+2. Provision prod environment ✅
+3. Provision stage environment ❌
+4. AWS Lambda: Zip functions, create S3 bucket, upload, register function, tie to API Gateway and Cloudwatch ✅
+5. React: Create S3 bucket, cloudfront policy ✅
+
+#### Github Actions
+1. Setup Github Action for Terraform on pull request and push to main
+2. Does it work? No, it fails due to package version issues
 
 ### Deployment
 

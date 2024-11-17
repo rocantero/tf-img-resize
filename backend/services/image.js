@@ -13,7 +13,7 @@ const getAll = async () => {
     Prefix: ORIGINAL_PREFIX,
   }).promise();
 
-  const imgs = response.Contents.map(item => (`https://${BUCKET_NAME}.s3.amazonaws.com/${item.Key}`));
+  const imgs = response.Contents.map(item => ( {name: item.key, link: `https://${BUCKET_NAME}.s3.amazonaws.com/${item.Key}`}));
 
   return { count: imgs.length, result: imgs };
 }

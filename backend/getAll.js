@@ -1,4 +1,4 @@
-const imageService = require('./service/image');
+const imageService = require('./services/image');
 
 
 exports.handler = async (event, context) => {

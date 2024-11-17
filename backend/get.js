@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     const image = await imageService.getResized(imageName, width, height);
     return {
       statusCode: 200,
-      body: JSON.stringify({ imageUrl: image }),
+      body: JSON.stringify({ result: { link: image } }),
     };   
   } catch (error) {
     return {

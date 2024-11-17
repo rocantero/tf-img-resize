@@ -19,6 +19,8 @@ exports.handler = async (event, context) => {
 
   const uniqueImageName = `${imageName.split('.')[0]}-${uuidv4()}.${imageName.split('.')[1]}`;
 
+  console.log(`[POST /images] - Uploading image: ${imageName} as ${uniqueImageName}`);
+
   try {   
     const savedImage = await imageService.create(imageBuffer, uniqueImageName);
 

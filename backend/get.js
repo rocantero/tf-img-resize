@@ -24,6 +24,7 @@ exports.handler = async (event, context) => {
   const dimensions = pathParts[2];
   const [width, height] = dimensions.split('x').map(Number);
   const imageName = pathParts[3];
+  console.log(`[getResizedImage] Serve resized image: ${imageName} at ${width}px width and ${height}px height)`);
 
   try {
     const image = await imageService.getResized(imageName, width, height);

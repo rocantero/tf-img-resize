@@ -1,0 +1,15 @@
+{
+  "name": "tf-aws-react-challenge-backend",
+  "version": "1.0.0",
+  "description": "Backend for the tf-aws-react-challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node get.js"
+  },
+  "author": "Rodrigo Cantero",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "sharp": "^0.33.5"
+  }
+}

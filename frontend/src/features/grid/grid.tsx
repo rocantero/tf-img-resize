@@ -1,6 +1,5 @@
 import { useState, useEffect, Key } from "react"
 import { useGetAllImagesQuery } from "./grid.slice"
-import { useAppSelector } from "../../hooks"
 import './grid.scss'
 
 interface ImgResponse {

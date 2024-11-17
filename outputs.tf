@@ -10,8 +10,20 @@ output "base_url" {
   value = aws_apigatewayv2_stage.lambda.invoke_url
 }
 
-output "function_name" {
-  description = "Name of the Lambda function."
+output "function_name_get_all" {
+  description = "Name of the Lambda functions."
 
-  value = aws_lambda_function.img_resize.function_name
+  value = aws_lambda_function.get_all_images.function_name
+}
+
+output "function_name_get" {
+  description = "Name of the Lambda functions."
+
+  value = aws_lambda_function.get_resized_image.function_name
+}
+
+output "function_name_upload" {
+  description = "Name of the Lambda functions."
+
+  value = aws_lambda_function.upload_image.function_name
 }

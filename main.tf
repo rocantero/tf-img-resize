@@ -180,7 +180,7 @@ resource "aws_apigatewayv2_integration" "get_all_images" {
 resource "aws_apigatewayv2_route" "get_all_images" {
   api_id = aws_apigatewayv2_api.lambda.id
 
-  route_key = "POST /images"
+  route_key = "GET /images"
   target    = "integrations/${aws_apigatewayv2_integration.get_all_images.id}"
 }
 

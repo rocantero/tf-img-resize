@@ -1,7 +1,7 @@
 /**
  * AWS Lambda handler to get a resized image.
  * 
- * This function handles the GET request to the endpoint /image/{width}x{height}/{imageName}.
+ * This function handles the GET request to the endpoint /image/{dimensions}/{imageName}.
  * It extracts the width, height, and image name from the URL path, and then uses the imageService
  * to get a resized version of the image. If successful, it returns the URL of the resized image.
  * If the original image does not exist, it throws an error.
@@ -19,12 +19,11 @@ const imageService = require ('./services/image');
 
 exports.handler = async (event, context) => {
   const { path } = event;
+  console.log('[GET /images/{dimensions}/{imageName}] - Path:', path);
   const pathParts = path.split('/');
-  const dimensions = pathParts[2].split('x');
-  const width = parseInt(dimensions[0]);
-  const height = parseInt(dimensions[1]);
-  const imageFullName = pathParts[3];
-  const [imageName, imageExtension] = imageFullName.split('.');
+  const dimensions = pathParts[2];
+  const [width, height] = dimensions.split('x').map(Number);
+  const imageName = pathParts[3];
 
   try {
     const image = await imageService.getResized(imageName, width, height);

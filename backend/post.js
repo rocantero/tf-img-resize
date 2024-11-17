@@ -2,7 +2,7 @@
  * AWS Lambda handler to process image upload.
  * 
  * This service receives an image file and returns an object with "name" as the image name 
- * and "link" as the S3 bucket URL.
+ * and "url" as the S3 bucket URL.
  * 
  * @param {Object} event - The event object containing the request data.
  * @param {Object} context - The context object containing runtime information.

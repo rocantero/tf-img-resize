@@ -1,6 +1,5 @@
 const imageService = require('./services/image');
 
-
 exports.handler = async (event, context) => {
   try {
     const images = await imageService.getAll();

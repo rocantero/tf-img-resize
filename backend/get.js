@@ -1,6 +1,3 @@
-const imageService = require('./service/image');
-
-
 /**
  * AWS Lambda handler to get a resized image.
  * 
@@ -33,7 +30,7 @@ exports.handler = async (event, context) => {
     const image = await imageService.getResized(imageName, width, height);
     return {
       statusCode: 200,
-      body: JSON.stringify({ result: { link: image } }),
+      body: JSON.stringify({ result: { url: image } }),
     };   
   } catch (error) {
     return {
